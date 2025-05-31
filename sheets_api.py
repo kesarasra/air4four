@@ -3,8 +3,8 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
 SERVICE_ACCOUNT_FILE = "credentials/sa_key.json"
-SPREADSHEET_ID = "13YQu0gbLLgar55plAP35M-ZsYoMz-DB2NaO1mc3kA7Q"
-FETCH_RANGE = "Tree_ID!E2:E"  # Adjust as needed
+SPREADSHEET_ID = "1-L2izXLfLDq-JMQ4Z_h0svSYVqSlB-V77HyaWaFqWKE"
+FETCH_RANGE = "Sheet1!E2:E"  # Adjust as needed
 
 def get_sheets_service():
     credentials = service_account.Credentials.from_service_account_file(
@@ -34,7 +34,7 @@ def append_qr_row(tree_id, prefilled_url, qr_url):
 
     sheet.values().append(
         spreadsheetId=SPREADSHEET_ID,
-        range="QR_Codes!A2:C",
+        range="Sheet2!A2:C",
         valueInputOption="RAW",
         insertDataOption="INSERT_ROWS",
         body=body
